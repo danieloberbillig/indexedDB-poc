@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+}
+
+article.container {
+    width: 800px;
+    padding: 10px 10px 10px 30px;
+    height: 100vh;
+    margin: auto;
+    background-color: azure;
+}

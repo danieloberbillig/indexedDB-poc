@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>IndexedDB POC</title>
+</head>
+
+<body>
+    <article class="container">
+        <h1>IndexedDB POC</h1>
+        <p>based on https://output.jsbin.com/gituxa</p>
+
+        <section class="intro">
+            <ul>
+                <li>Creating a Database, for storing employees (an employee has an id (property "empId"), a name, a
+                    department and an email)</li>
+                <li>Creating an object store in that dataBase,</li>
+                <li>Specifying a keyPath (a property in the objects stored that will act as a Primary Key, in this case
+                    the
+                    empId),</li>
+                <li>Adding two indexes for faster retrievals (one on the name, one on the email (unique) property of
+                    each
+                    object),</li>
+                <li>Populating the dataBase with three entries.</li>
+            </ul>
+            <p>Press button for calling createDatabase(). See debugging console.</p>
+        </section>
+
+        <button onclick="createDatabase();">Create/Open EmployeeDB database</button>
+        <br>
+        <br>
+
+        <section class="employeeForm">
+            <fieldset>
+                Employee ID: <input type="number" id="employeeId" placeholder="0" required /><br>
+                Name: <input type="text" id="name" placeholder="first and last name" /><br>
+                Email: <input type="email" id="email" placeholder="email must be unique" /><br>
+                <button onclick="addEmployee();">Add a new employee</button><button onclick="updateEmployee();">Update
+                    data about an existing employee</button><br>
+            </fieldset>
+        </section>
+
+        <section class="employeeAction">
+            <button onclick="removeEmployee();">Remove employee with ID = 1 (Daniel)</button><br>
+            <button onclick="searchEmployee();">Search employee (enter employee ID)</button><br>
+            <button onclick="listAllEmployees();">List all employee</button><br>
+            <button onclick="getEmployeeByName();">Search employee name = Daniel</button><br>
+            <button onclick="removeIndexedDB();">Delete complete EmployeeDB</button><br>
+        </section>
+    </article>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
